@@ -1,20 +1,44 @@
 [
     {
-        "id": 2,
-        "name": "Bob",
-        "note": "hello",
+        "id": 1,
+        "name": "user1",
+        "note": "note user1",
         "username": "user1"
     },
     {
+        "id": 2,
+        "name": "User 2",
+        "note": "note user2, hello",
+        "username": "user2"
+    },
+    {
         "id": 3,
-        "name": "Charlie",
-        "note": "hi-hello",
-        "username": "user3"
+        "name": "user 3",
+        "note": "note 1",
+        "username": "kristina"
+    },
+    {
+        "id": 4,
+        "name": "user 4",
+        "note": "How are you",
+        "username": "alena"
+    },
+    {
+        "id": 5,
+        "name": "user 5",
+        "note": "im fine",
+        "username": "dmitriya"
+    },
+    {
+        "id": 6,
+        "name": "user 3",
+        "note": "note 2",
+        "username": "kristina"
     },
     {
         "id": 1,
         "name": "Chalie",
-        "note": "string",
+        "note": "note 1",
         "username": "user1"
     }
 ]
