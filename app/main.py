@@ -16,7 +16,8 @@ API_KEYS = {
     "user2_api_key": "user2",
     "user3_api_key": "kristina",
     "user4_api_key": "alena",
-    "user5_api_key": "dmitriy"
+    "user5_api_key": "dmitriy",
+    "user6_api_key": "test"
 }
 
 # Зависимость для получения API ключа
@@ -30,13 +31,13 @@ class User(BaseModel):
 
 # Функция чтения получает путь до файла и читает его
 def read_data(file_path: str):
-    with open(file_path, "r") as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 # Функция записи данных: получает путь до файла и данные,которые нужно записать
 def write_data(data):
-    with open(file_path, "w") as file:
-        json.dump(data, file, indent=4)
+    with open(file_path, "w", encoding="utf-8") as file:
+        json.dump(data, file,ensure_ascii=False, indent=4)
 
 # Функция для проверки орфографии с использованием Яндекс.Спеллер
 def check_spelling(note: str):
@@ -74,7 +75,7 @@ async def get_users(api_key: str = Depends(api_key_header)):
 
 # POST запрос для добавления новой записи
 @app.post("/users", response_model=User)
-async def add_user(user: User, api_key: str = Depends(api_key_header)):
+async def add_users(user: User, api_key: str = Depends(api_key_header)):
     username = API_KEYS.get(api_key)
     if not username:
         raise HTTPException(status_code=401, detail="Invalid API Key")
@@ -92,3 +93,4 @@ async def add_user(user: User, api_key: str = Depends(api_key_header)):
     write_data(data)
 
     return user
+
