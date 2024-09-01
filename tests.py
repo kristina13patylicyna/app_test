@@ -19,7 +19,7 @@ def test_post_note():
     data = {
         "id": 1,
         "name": "Josh",
-        "note": "Привет, как дела? Что желаешь?"
+        "note": "Привет, как дела? Что делаешь?"
     }
 
     # Выполняем POST запрос
@@ -31,7 +31,7 @@ def test_post_note():
     response_data = response.json()
     assert response_data["id"] == 1
     assert response_data["name"] == "Josh"
-    assert response_data["note"] == "Привет, как дела? Что желаешь?"
+    assert response_data["note"] == "Привет, как дела? Что делаешь?"
 
 def test_get_note():
     # Выполняем GET запрос для получения заметки по ID
@@ -51,4 +51,5 @@ def test_get_note():
         first_note = response_data[0]  # Работаем с первым элементом списка
         assert first_note["id"] == 1
         assert first_note["name"] == "Josh"
-        assert first_note["note"] == "Привет, как дела? Что желаешь?"
+        assert first_note["note"] == "Привет, как дела? Что делаешь?"
+
